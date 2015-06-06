@@ -10,5 +10,11 @@ RUN pip install uwsgi
 
 RUN apt-get install -y git
 
+WORKDIR /var/www
+RUN git clone https://github.com/mooithub/tdd_django.git
 
+WORKDIR /var/www/tdd_django
+RUN virtualenv --no-site-packages --distribute ~/.venv/tdd
+RUN source ~/.venv/tdd/bin/activate
+RUN pip install -r pip-requirements.txt
 
