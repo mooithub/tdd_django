@@ -15,6 +15,6 @@ RUN git clone https://github.com/mooithub/tdd_django.git
 
 WORKDIR /var/www/tdd_django
 RUN virtualenv --no-site-packages --distribute ~/.venv/tdd
-RUN source ~/.venv/tdd/bin/activate
+RUN . ~/.venv/tdd/bin/activate
 RUN pip install -r pip-requirements.txt
 
