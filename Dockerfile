@@ -41,7 +41,9 @@ WORKDIR /var/www
 ADD ./ ./tdd_django/
 
 WORKDIR /var/www/tdd_django
-RUN cp ./screenrc ~/.screenrc
+RUN cp ./env/.screenrc ~/.screenrc
+RUN cp ./env/.vimrc ~/.vimrc
+RUN . ~/.vimrc
 RUN virtualenv --no-site-packages --distribute ~/.venv/tdd
 RUN . ~/.venv/tdd/bin/activate; pip install -r pip-requirements.txt
 
